@@ -10,6 +10,6 @@ namespace Domain.Entity.Auth
         public string Name { get; set; }
         public string Description { get; set; }
         public EGenericStatus Status { get; set; }
-        public bool? DefaultData { get; set; } = false;
+        public int? DefaultData { get; set; } = 0;
     }
 }

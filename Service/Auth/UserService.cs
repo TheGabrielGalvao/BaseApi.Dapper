@@ -32,7 +32,8 @@ namespace Service.Auth
                 UserName = user.UserName,
                 UserPass = user.UserPass,
                 UserEmail = user.UserEmail,
-                UserProfileId = profile.Id
+                UserProfileId = profile.Id,
+                Status = request.Status
             };
 
             var addedUser = await _repository.AddAsync(userEntity);
@@ -61,6 +62,7 @@ namespace Service.Auth
                 UserEmail = x.UserEmail,
                 UserName = x.UserName,
                 UserPass = x.UserPass,
+                Status = x.Status!.Value,
                 UserProfileUuid = GetProfileById(x.UserProfileId).Result.Uuid
             }).ToList<UserResponse>(); 
 
